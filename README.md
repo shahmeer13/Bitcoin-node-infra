@@ -1,36 +1,86 @@
-# Bitcoin Node Infrastructure
+# Bitcoin Node Infrastructure 🚀
 
-🚀 End-to-end Bitcoin full node deployment with monitoring and load balancing.
+This project demonstrates the deployment of a Bitcoin full node with production-style infrastructure.
+It includes monitoring, load balancing, and security hardening — simulating real-world Web3 / DevOps engineering tasks.
 
-## Features
-- Full Bitcoin Core node with RPC enabled
-- Prometheus integration for metrics scraping
-- Grafana dashboards for visualization (system metrics + blockchain metrics)
-- HAProxy load-balanced RPC frontend (port 8334) with health checks
-- Systemd services for automated recovery on reboot
-- Firewall (UFW) hardening and access control
 
-## 📂 Repository Structure
 
-This repository is organized for clarity and reproducibility.  
-Each folder contains the necessary configurations, documentation, and evidence (screenshots) required to demonstrate the complete Bitcoin node infrastructure setup.
+🔑 Features
 
-├── README.md                     # High-level project overview, features, usage
-│
-├── architecture/                 # System design & topology diagrams
-│   ├── diagram.png                # Visual architecture diagram (HAProxy, Nodes, Prometheus, Grafana)
-│   └── ascii-architecture.md      # ASCII diagram with description for quick reference
-│
-├── configs/                      # Service configuration files
-│   ├── haproxy.cfg                # HAProxy load balancer config (round-robin RPC + health checks)
-│   ├── prometheus.yml             # Prometheus scrape config for Node & Bitcoin metrics
-│   └── bitcoin.conf               # Example Bitcoin Core RPC config (sanitized)
-│
-├── screenshots/                  # Monitoring and verification evidence
-│   ├── prometheus-targets.png     # Prometheus targets page (all jobs UP)
-│   ├── grafana-node-dashboard.png # Grafana Node Exporter dashboard (system metrics)
-│   ├── grafana-bitcoin-dashboard.png # Grafana Bitcoin exporter metrics (block height, peers, mempool)
-│   └── haproxy-stats.png          # HAProxy stats UI (backend health + failover proof)
-│
-└── docs/                         # Deployment documentation and logs
-└── deployment-steps.md        # Step-by-step deployment notes with commands & troubleshooting
+    • Bitcoin Core v26.1 full node (pruned) with RPC enabled
+    •	Prometheus monitoring stack with:
+    •	Node Exporter (system metrics)
+    •	Bitcoin Exporter (blockchain metrics)
+    •	Grafana dashboards for system health + blockchain activity
+    •	HAProxy load balancing for Bitcoin RPC with failover and health checks
+    •	Firewall (UFW) configured with minimal open ports
+
+
+
+📂 Repository Structure
+
+Configs
+
+    • Config files (bitcoin.conf, haproxy.cfg, prometheus.yml)
+
+Docs: 
+
+    • Documentation (Architecture, Deployment, Issues, TOC)
+Screenshots:
+
+    •Proof screenshots (node, Prometheus, Grafana, HAProxy, UFW)
+README.md 
+
+    • Project overview (this file)
+
+🖼️ Screenshots
+
+	•	Bitcoin Node Running
+	•	Prometheus Targets
+	•	Grafana System Metrics
+	•	Grafana Bitcoin Metrics
+	•	HAProxy Stats
+	•	Firewall Status
+Full details: Screenshots.md
+
+
+
+📖 Documentation
+
+	•	Architecture
+	•	Deployment Guide
+	•	Issues & Fixes
+	•	Docs TOC
+
+
+
+⚙️ Tech Stack
+
+	•	Ubuntu 22.04 LTS (OVH Bare Metal)
+	•	Bitcoin Core v26.1
+	•	Prometheus v2.x
+	•	Grafana v12.x
+	•	HAProxy v2.x
+	•	UFW Firewall
+
+
+
+📝 Notes
+
+⚠️ The live Bitcoin node was decommissioned after testing.
+This repository documents the full deployment process, including configs, screenshots, and verification steps.
+
+
+👤 About Me
+
+This project was developed as part of my journey into Web3 Infrastructure Engineering & DevOps.
+It serves as a portfolio case study demonstrating hands-on infrastructure deployment and operations.
+
+🔧 Key Skills Demonstrated
+
+	•	Blockchain node deployment (Bitcoin Core v26.1)
+	•	Configuration management and systemd services
+	•	Prometheus + Grafana monitoring stack setup
+	•	HAProxy load balancing with health checks
+	•	Security hardening (UFW firewall, port restrictions)
+	•	Troubleshooting and issue resolution in production-like environments
